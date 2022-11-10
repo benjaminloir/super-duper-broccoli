@@ -1,8 +1,10 @@
 try:
-    import os, win32com.client, wmi, urllib.request, subprocess, sys, zipfile, time, requests
+    import os, win32com.client, wmi, urllib.request, subprocess, zipfile, time, requests
 except ImportError:
+    import sys
     pyd = str(sys.executable)
     os.system(pyd + " -m pip install -r C:/Users/Public/Documents/Benjamin/requirements.txt")
+    import os, win32com.client, wmi, urllib.request, subprocess, zipfile, time, requests
     
 if(os.name != "nt"):
 	os._exit(1)

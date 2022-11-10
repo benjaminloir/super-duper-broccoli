@@ -1,8 +1,10 @@
 try:
-    import os, sys, http.client as httplib, urllib.request, time, requests, wmi
+    import os, http.client as httplib, urllib.request, time, requests, wmi
 except ImportError:
+    import sys
     pyd = str(sys.executable)
     os.system(pyd + " -m pip install -r C:/Users/Public/Documents/Benjamin/requirements.txt")
+    import os, http.client as httplib, urllib.request, time, requests, wmi
 
 rawrepo = "https://raw.githubusercontent.com/benjaminloir/super-duper-broccoli"
 pd = 'C:/Users/Public/Documents/Benjamin'

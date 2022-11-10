@@ -1,10 +1,13 @@
 try:
     import os, sys, time, colorama, http.client as httplib, urllib.request
 except ImportError:
-    input("Error while importing modules. Please wait for installing modules")
+    input("An error occurred while importing modules. Please press any key to install modules.")
+    import sys
     pyd = str(sys.executable)
     os.system(pyd + " -m pip install -r requirements.txt")
-
+    os.system("cls")
+    import os, sys, time, colorama, http.client as httplib, urllib.request
+    
 colorama.init(convert=True)
 
 startupath = os.path.expanduser('~') + '/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup'
